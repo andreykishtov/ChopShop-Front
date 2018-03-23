@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { itemsRequest } from '../Store/actions/items';
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +11,6 @@ class App extends Component {
   componentWillMount = async () => {
     try {
       await this.props.getItems();
-      this.setState({ special });
     } catch (error) {
       console.log(error);
     }
@@ -19,4 +21,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  getItems: () => dispatch(itemsRequest())
+});
+
+const mapStateToProps = state => ({
+  items: state.items
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
