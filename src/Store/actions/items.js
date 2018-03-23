@@ -15,7 +15,6 @@ export const itemsRequest = () => async dispatch => {
 
   try {
     const res = await axios.get(URL);
-    console.log(res);
     const { Items } = res;
     dispatch(getItemsSuccess(Items));
   } catch (error) {
