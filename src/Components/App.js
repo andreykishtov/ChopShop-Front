@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  componentWillMount = async () => {
+    try {
+      await this.props.getItems();
+      this.setState({ special });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return <div className="App">Hi I am Site</div>;
   }
 }
 
