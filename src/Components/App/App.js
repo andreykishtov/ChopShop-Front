@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { itemsRequest } from '../Store/actions/items';
+import { itemsRequest } from '../../Store/actions/items';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,12 @@ class App extends Component {
   };
 
   render() {
-    return <div className="App">Hi I am Site</div>;
+    return (
+      <div>
+        <p>Test</p>
+        <div className="App">Hi I am Site</div>
+      </div>
+    );
   }
 }
 

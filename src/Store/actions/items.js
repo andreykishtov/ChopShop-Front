@@ -3,7 +3,6 @@ import { GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAILURE } from '../constants/it
 
 const URL = 'http://localhost:9000/api/items';
 
-
 export const getItems = () => ({ type: GET_ITEMS });
 export const getItemsSuccess = items => ({ type: GET_ITEMS_SUCCESS, payload: { items } });
 export const getItemsFailure = error => ({
@@ -16,9 +15,8 @@ export const itemsRequest = () => async dispatch => {
 
   try {
     const res = await axios.get(URL);
-    console.log(res)
-    const { Items } = res;
-    dispatch(getItemsSuccess(Items));
+    const { data } = res;
+    dispatch(getItemsSuccess(data));
   } catch (error) {
     dispatch(getItemsFailure(error));
   }
