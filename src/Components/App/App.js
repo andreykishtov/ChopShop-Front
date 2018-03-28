@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { itemsRequest } from '../Store/actions/items';
+import { itemsRequest } from '../../Store/actions/items';
+import ItemsList from '../ItemsList/ItemsList';
 
 class App extends Component {
-
   componentWillMount = async () => {
     try {
       await this.props.getItems();
@@ -14,12 +14,16 @@ class App extends Component {
   };
 
   render() {
-    return <div className="App">Hi I am Site</div>;
+    return (
+      <div>
+        <ItemsList />
+      </div>
+    );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  getItems: () => dispatch(itemsRequest())
+  getItems: () => dispatch(itemsRequest)
 });
 
 const mapStateToProps = state => ({
