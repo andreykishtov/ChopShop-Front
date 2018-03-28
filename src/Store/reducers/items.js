@@ -1,7 +1,7 @@
 import { GET_ITEMS, GET_ITEMS_SUCCESS, GET_ITEMS_FAILURE } from '../constants/items';
 
 const initialState = {
-  items: [],
+  data: [],
   getItemsPending: false,
   getItemsError: false
 };
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case GET_ITEMS_SUCCESS:
       return {
         ...state,
-        items: action.payload.items,
+        data: action.payload.data,
         getItemsPending: false
       };
     case GET_ITEMS_FAILURE:

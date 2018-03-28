@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { itemsRequest } from '../../Store/actions/items';
+import ItemsList from '../ItemsList/ItemsList';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   componentWillMount = async () => {
     try {
       await this.props.getItems();
@@ -19,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>Test</p>
+        <ItemsList />
         <div className="App">Hi I am Site</div>
       </div>
     );
