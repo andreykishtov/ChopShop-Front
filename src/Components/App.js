@@ -4,10 +4,7 @@ import { connect } from 'react-redux';
 import { itemsRequest } from '../Store/actions/items';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+
   componentWillMount = async () => {
     try {
       await this.props.getItems();
