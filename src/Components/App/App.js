@@ -17,14 +17,13 @@ class App extends Component {
     return (
       <div>
         <ItemsList />
-        <div className="App">Hi I am Site</div>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  getItems: () => dispatch(itemsRequest())
+  getItems: () => dispatch(itemsRequest)
 });
 
 const mapStateToProps = state => ({

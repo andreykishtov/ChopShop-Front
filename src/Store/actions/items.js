@@ -10,7 +10,7 @@ export const getItemsFailure = error => ({
   payload: { error }
 });
 
-export const itemsRequest = () => async dispatch => {
+export const itemsRequest = async dispatch => {
   dispatch(getItems());
 
   try {
