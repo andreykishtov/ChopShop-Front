@@ -19,14 +19,29 @@ const StyledItemsList = styled.div`
   }
 `;
 
+<<<<<<< HEAD
 const ItemsList = ({ items }) => <StyledItemsList>{items.map(item => <Item item={item} />)}</StyledItemsList>;
+=======
+class ItemsList extends Component {
+  constructor(props) {
+    super();
+  }
+
+  render() {
+    return <StyledItemsList>{this.props.items.map(item => <Item item={item} />)}</StyledItemsList>;
+  }
+}
+>>>>>>> 88e08b9b2c51639683a23dc0e4f15990fd054093
 
 const mapStateToProps = state => ({
   items: state.items.data
 });
 
+<<<<<<< HEAD
 ItemsList.propTypes = {
   items: PropTypes.array.isRequired
 };
 
+=======
+>>>>>>> 88e08b9b2c51639683a23dc0e4f15990fd054093
 export default connect(mapStateToProps)(ItemsList);
