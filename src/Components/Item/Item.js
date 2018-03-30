@@ -26,9 +26,15 @@ const Item = ({ _id, title, imageUrl }) => (
 );
 
 Item.propTypes = {
-  _id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired
+  _id: PropTypes.string,
+  title: PropTypes.string,
+  imageUrl: PropTypes.string
+};
+
+Item.defaultProps = {
+  _id: '9999',
+  title: 'title',
+  imageUrl: 'image'
 };
 
 export default Item;
