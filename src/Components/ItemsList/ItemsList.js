@@ -19,7 +19,10 @@ const StyledItemsList = styled.div`
   }
 `;
 
-const ItemsList = ({ items }) => <StyledItemsList>{items.map(item => <Item item={item} />)}</StyledItemsList>;
+const ItemsList = ({ items }) => (
+  /* eslint no-underscore-dangle: 0 */
+  <StyledItemsList>{items.map(item => <Item {...item} key={item._id} />)}</StyledItemsList>
+);
 
 const mapStateToProps = state => ({
   items: state.items.data
