@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { itemsRequest } from '../../Store/actions/items';
 import ItemsList from '../ItemsList/ItemsList';
@@ -30,4 +31,9 @@ const mapStateToProps = state => ({
   items: state.items
 });
 
+App.propTypes = {
+  getItems: PropTypes.func.isRequired
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

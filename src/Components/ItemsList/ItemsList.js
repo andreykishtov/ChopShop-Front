@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Item from '../Item/Item';
-import styled from 'styled-components';
 
 const StyledItemsList = styled.div`
   display: grid;
@@ -18,18 +19,14 @@ const StyledItemsList = styled.div`
   }
 `;
 
-class ItemsList extends Component {
-  constructor(props) {
-    super();
-  }
-
-  render() {
-    return <StyledItemsList>{this.props.items.map(item => <Item item={item} />)}</StyledItemsList>;
-  }
-}
+const ItemsList = ({ items }) => <StyledItemsList>{items.map(item => <Item item={item} />)}</StyledItemsList>;
 
 const mapStateToProps = state => ({
   items: state.items.data
 });
+
+ItemsList.propTypes = {
+  items: PropTypes.array.isRequired
+};
 
 export default connect(mapStateToProps)(ItemsList);

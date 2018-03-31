@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import Theme from '../../Theme/Theme';
@@ -17,16 +18,23 @@ const Image = styled.img`
   height: auto;
 `;
 
-class Item extends Component {
-  render() {
-    console.log(this.props);
-    return (
-      <Link to={`/items/${this.props.item._id}`} key={this.props.item._id}>
-        <Title>{this.props.item.title}</Title>
-        <Image src={this.props.item.imageUrl} alt={this.props.item.title} />
-      </Link>
-    );
-  }
-}
+const Item = ({ _id, title, imageUrl }) => (
+  <Link to={`/items/${_id}`} key={_id}>
+    <Title>{title}</Title>
+    <Image src={imageUrl} alt={title} />
+  </Link>
+);
+
+Item.propTypes = {
+  _id: PropTypes.string,
+  title: PropTypes.string,
+  imageUrl: PropTypes.string
+};
+
+Item.defaultProps = {
+  _id: '9999',
+  title: 'title',
+  imageUrl: 'image'
+};
 
 export default Item;
