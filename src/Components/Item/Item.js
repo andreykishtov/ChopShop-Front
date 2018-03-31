@@ -19,7 +19,7 @@ const Image = styled.img`
 `;
 
 const Item = ({ _id, title, imageUrl }) => (
-  <Link to={`/items/${_id}`} key={_id}>
+  <Link to={`/items/${_id}`}>
     <Title>{title}</Title>
     <Image src={imageUrl} alt={title} />
   </Link>
