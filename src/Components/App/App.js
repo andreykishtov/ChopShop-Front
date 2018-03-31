@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { itemsRequest } from '../../Store/actions/items';
 import ItemsList from '../ItemsList/ItemsList';
+import NavBar from '../NavBar/NavBar';
 
 class App extends Component {
   componentWillMount = async () => {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <NavBar />
         <ItemsList />
       </div>
     );
