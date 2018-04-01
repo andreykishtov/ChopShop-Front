@@ -10,7 +10,7 @@ const Title = styled.p`
   margin: 1em;
   padding: 0.25em 1em;
   border-radius: 3px;
-  color: ${Theme.fontColor};
+  color: ${Theme.pallette.main};
 `;
 
 const Image = styled.img`

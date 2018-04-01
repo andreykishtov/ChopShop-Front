@@ -4,17 +4,18 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Item from '../Item/Item';
+import Theme from '../../Theme/Theme';
 
 const StyledItemsList = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 23% 23% 23% 23%;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Theme.narrowScreen}) {
     grid-template-columns: 31% 31% 31%;
   }
 
-  @media (max-width: 544px) {
+  @media (max-width: ${Theme.mobileWidth}) {
     grid-template-columns: 92%;
   }
 `;
